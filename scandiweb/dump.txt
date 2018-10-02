@@ -1,0 +1,47 @@
+-- Dumping database structure for scandiweb
+CREATE DATABASE IF NOT EXISTS `scandiweb` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_latvian_ci */;
+USE `scandiweb`;
+
+-- Dumping structure for table scandiweb.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(50) COLLATE utf8_latvian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_latvian_ci;
+
+-- Dumping data for table scandiweb.category
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`id`, `category_name`) VALUES
+	(1, 'DVD-disc'),
+	(2, 'Book'),
+	(3, 'Furniture');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+
+-- Dumping structure for table scandiweb.products
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sku` varchar(100) COLLATE utf8_latvian_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8_latvian_ci NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `attribute` varchar(50) COLLATE utf8_latvian_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `SKU` (`sku`),
+  KEY `FK_products_category` (`category_id`),
+  CONSTRAINT `FK_products_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_latvian_ci;
+
+-- Dumping data for table scandiweb.products
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`id`, `sku`, `name`, `price`, `category_id`, `attribute`) VALUES
+	(1, 'JCV200123', 'Acme DISC', 1.00, 1, '700'),
+	(2, 'JCV200124', 'DISC', 5.00, 1, '500'),
+	(3, 'JCV200125', 'Film DISC', 15.00, 1, '2400'),
+	(4, 'GGWP0007', 'War and Peace', 20.00, 2, '2'),
+	(5, 'GGWP0008', 'Film Random', 15.00, 2, '3'),
+	(6, 'GGWP0009', 'Film Best', 25.00, 2, '7'),
+	(7, 'TR120555', 'Chair', 40.00, 3, '2.4x24x15'),
+	(8, 'TR120556', 'Desk', 90.00, 3, '20x20x15'),
+	(9, 'TR120557', 'Chair 22', 20.00, 3, '1.9x27x18'),
+	(10, 'TR120558', 'Chair', 123.00, 3, '13x17x27');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;

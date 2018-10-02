@@ -1,0 +1,106 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.container {
+  font-family: Arial, 'sans-serif';
+  font-size: 16px;
+  position: absolute;
+  width: 920px;
+  height: auto;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+  .container header {
+    margin-top: 50px;
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid #000000; }
+    .container header .title {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      width: 50%;
+      float: left; }
+    .container header .options {
+      width: 250px;
+      text-align: right;
+      float: right;
+      margin: 10px 20px 0 0; }
+      .container header .options button {
+        margin-right: 15px;
+        width: 100px;
+        height: 45px;
+        border-radius: 20px;
+        outline: none;
+        background-color: transparent;
+        border: 3px solid #FFA500;
+        cursor: pointer; }
+        .container header .options button:hover {
+          background-color: #FFA500; }
+  .container .product-list {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: auto auto auto auto; }
+    .container .product-list .product-individual {
+      border: 1px solid #000000;
+      text-align: center;
+      padding: 5px;
+      margin: 0 20px 20px 0; }
+      .container .product-list .product-individual .product-individual-sku {
+        margin-top: 20px; }
+      .container .product-list .product-individual .product-individual-sku,
+      .container .product-list .product-individual .product-individual-name,
+      .container .product-list .product-individual .product-individual-price,
+      .container .product-list .product-individual .product-individual-attribute {
+        margin-bottom: 10px; }
+      .container .product-list .product-individual input {
+        float: left; }
+    .container .product-list form .form-group,
+    .container .product-list form .form-group-attribute {
+      margin-bottom: 40px;
+      width: 400px; }
+      .container .product-list form .form-group input,
+      .container .product-list form .form-group select,
+      .container .product-list form .form-group-attribute input,
+      .container .product-list form .form-group-attribute select {
+        width: 250px;
+        height: 30px;
+        box-sizing: border-box;
+        display: block; }
+        .container .product-list form .form-group input.dimensions,
+        .container .product-list form .form-group select.dimensions,
+        .container .product-list form .form-group-attribute input.dimensions,
+        .container .product-list form .form-group-attribute select.dimensions {
+          margin-top: 10px; }
+      .container .product-list form .form-group select,
+      .container .product-list form .form-group-attribute select {
+        outline: none; }
+      .container .product-list form .form-group#size, .container .product-list form .form-group#weight, .container .product-list form .form-group#dimensions,
+      .container .product-list form .form-group-attribute#size,
+      .container .product-list form .form-group-attribute#weight,
+      .container .product-list form .form-group-attribute#dimensions {
+        display: none; }
+    .container .product-list form label {
+      margin-top: 10px;
+      margin-right: 30px;
+      float: left;
+      width: 60px; }
+      .container .product-list form label.special {
+        width: 100px; }
+    .container .product-list form .label-description {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: #ff0000; }
+      .container .product-list form .label-description p {
+        line-height: 5px; }
+
+/*# sourceMappingURL=style.css.map */
